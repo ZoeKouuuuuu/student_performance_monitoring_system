@@ -1,0 +1,47 @@
+import tkinter as tk
+from tkinter import messagebox
+
+tkw = tk.Tk()
+tkw.title('Login Page')
+tkw.geometry('500x300')
+tkw.configure(bg='#595959')
+
+#To Sanar!!!!! You may have to work on inserting the login and password information.
+#As I only can insert 1 person information!!!
+#IDK how to insert more person information~~~~~~~
+#Everything should be insert the frame part
+
+def login():
+    username1 = 'S001'
+    password1 = '12345'
+
+    if username_entry.get()==username1 and password_entry.get()==password1:
+        messagebox.showinfo("Login Successful", "Welcome! You login successfully")
+    else:
+        messagebox.showerror("Login Failed", "Invalid username or password")
+
+#No username or password information should be exceeding this part
+
+frame = tk.Frame(bg='#595959')
+
+
+#Create widgets
+login_label = tk.Label(frame, text="Performance Prediction System", bg='#595959', fg='#FFFFFF', font=('arial', 30, 'bold'))
+username_label = tk.Label(frame, text="Student ID: ", bg='#595959', fg='#FFFFFF', font=('arial', 16))
+username_entry = tk.Entry(frame, font=('arial', 16))
+password_label = tk.Label(frame, text="Password: ", bg='#595959', fg='#FFFFFF', font=('arial', 16))
+password_entry = tk.Entry(frame, show="*", font=('arial', 16))
+login_button = tk.Button(frame, text='Login', bg='#595959', fg='#000000', font=('arial', 16), command=login)
+
+
+#Placing widgets on the screen
+login_label.grid(row=0, column=0, columnspan=2, sticky='news', pady=40)
+username_label.grid(row=1, column=0)
+username_entry.grid(row=1, column=1, pady=10)
+password_label.grid(row=2, column=0)
+password_entry.grid(row=2, column=1, pady=10)
+login_button.grid(row=3, column=0, columnspan=2, pady=30)
+
+
+frame.pack()
+tkw.mainloop()
